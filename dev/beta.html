@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Notes Replica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
 
+  <div class="notepad">
+    <!-- Header -->
+    <header class="header">
+      <div class="app-name" contenteditable="true" onblur="updateTitle()">Notes</div>
+    </header>
+
+    <!-- Textarea -->
+    <textarea id="note" class="note" placeholder="Start typing..."></textarea>
+  </div>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
