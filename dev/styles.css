@@ -11,15 +11,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1c1c1e; /* Dark theme background color */
-  color: #f1f1f1; /* Light text for dark theme */
+  background-color: #f5f5f7; /* Light theme background color */
+  transition: background-color 0.3s ease;
 }
 
 .notepad {
   width: 100%;
   max-width: 800px;
   height: 90%;
-  background-color: #2c2c2e; /* Dark notepad background */
+  background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -30,8 +30,8 @@ body {
 /* Header */
 .header {
   padding: 15px;
-  background-color: #3a3a3c; /* Dark header */
-  border-bottom: 1px solid #444;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,9 +40,23 @@ body {
 .app-name {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #f1f1f1;
+  color: #333;
   min-width: 100px; /* Minimum width to prevent shrinking */
   cursor: text;
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-toggle, .dev-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
 }
 
 /* Notes Area */
@@ -55,11 +69,20 @@ body {
   resize: none;
   outline: none;
   background: transparent;
-  color: #f1f1f1;
+  color: #333;
   line-height: 1.5;
 }
 
-/* Light Theme Styles - Removed since we're always in Dark Mode */
+/* Light Theme Styles */
+body, .notepad {
+  background-color: #f5f5f7;
+  color: #333;
+}
+
+.note {
+  background-color: #fff;
+  color: #333;
+}
 
 /* Dark Theme Styles */
 body.dark-theme, .notepad.dark-theme {
@@ -74,6 +97,19 @@ body.dark-theme, .notepad.dark-theme {
 
 .note:focus {
   outline: none;
+}
+
+/* Smooth Typing Effect */
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.note.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2s steps(30) forwards;
 }
 
 /* Responsive Design */
