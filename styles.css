@@ -45,7 +45,13 @@ body {
   cursor: text;
 }
 
-.theme-toggle {
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-toggle, .dev-toggle {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -65,7 +71,6 @@ body {
   background: transparent;
   color: #333;
   line-height: 1.5;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Light Theme Styles */
@@ -120,5 +125,9 @@ body.dark-theme, .notepad.dark-theme {
 
   .app-name {
     font-size: 1.2rem;
+  }
+
+  .note {
+    font-size: 1rem;
   }
 }
